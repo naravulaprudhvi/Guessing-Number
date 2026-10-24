@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ title }}</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <main>
+    <h1>{{ title }}</h1>
+    <form method="post" action="{{ url_for('add') }}">
+      <input name="text" placeholder="Add an item" required>
+      <button type="submit">Add</button>
+    </form>
+    <ul>
+      {% for item in items %}<li>{{ item }}</li>{% endfor %}
+    </ul>
+  </main>
+</body>
+</html>
